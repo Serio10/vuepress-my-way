@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-my-way",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sliekens/vuepress-my-way.git"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/sliekens/vuepress-my-way/issues"
+  },
+  "homepage": "https://github.com/sliekens/vuepress-my-way#readme",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  }
+}
