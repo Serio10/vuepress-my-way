@@ -1,12 +1,12 @@
 #!/bin/bash
 npm ci
-npm run build -- --dest publish
-git stash -u
+npm run build
+git stash push -u -- docs/.vuepress/dist
 git fetch origin gh-pages
 git checkout gh-pages
-rm -rf *
+git rm -rf *
 git stash pop
-mv publish/* .
 git add .
+git mv docs/.vuepress/dist/* .
 git commit -m "Update docs"
 git push
