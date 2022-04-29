@@ -3,6 +3,10 @@ name: Update GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+    - docs/**
+    - .github/workflows/gh-pages.yml
+    - publish-docs.sh
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -20,5 +24,4 @@ jobs:
           git config user.email "<>"
 
       - name: Publish docs to gh-pages
-        run: ./publish.sh
-        if:  ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: npm run publish-docs
