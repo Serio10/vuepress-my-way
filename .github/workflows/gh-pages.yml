@@ -25,10 +25,7 @@ jobs:
         with:
           fetch-depth: 0 # (no limit)
           filter: blob:none
-          sparse-checkout: |
-            docs
-            package.json
-            package-lock.json
+          sparse-checkout: docs
           fetch-tags: false
           show-progress: false
 
@@ -37,8 +34,8 @@ jobs:
 
       - name: Build site
         run: |
-          npm ci
-          npm run build
+          npm ci --prefix docs
+          npm run build --prefix docs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

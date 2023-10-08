@@ -15,4 +15,16 @@ Your repository must be configured to use GitHub Actions as the source of your p
 
 ## Local development
 
-Run `npm install` in the root directory and then `npm start` to launch a development version of VuePress.
+To launch a development version of VuePress:
+
+``` sh
+cd docs
+npm install
+npm start
+```
+
+> ✔ Initializing and preparing data - done in 93ms
+> 
+>   vite v4.4.11 dev server running at:
+> 
+>   ➜  Local:   http://localhost:8080/vuepress-my-way/
