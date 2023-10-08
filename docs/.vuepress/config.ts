@@ -1,6 +1,4 @@
-import { defineConfig } from 'vuepress/config';
-
-export default defineConfig({
+export default {
     title: 'VuePress, my way',
     base: '/vuepress-my-way/'
-});
+}
