@@ -11,17 +11,35 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: setup git config
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Build site
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          npm ci
+          npm run build
 
-      - name: Publish docs to gh-pages
-        run: ./publish-docs.sh
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs/.vuepress/dist
