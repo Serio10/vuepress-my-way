@@ -1,20 +1,18 @@
 # How it works
 
-Change code and documentation together in atomic commits.
+The idea is to use VuePress to build a documentation site for your GitHub project and host it on GitHub Pages.
 
-Documentation source files are stored in the main branch under `/docs`.
+The classic GitHub pages experience is to store the files for your site in the `gh-pages` branch, but that won't let us change code and documentation together in atomic commits.
+
+Instead we will do the following:
+
+- Store source files for the site in the main branch under `/docs`
+- The `gh-pages.yml` workflow builds and deploys the docs on pushes to _main_
 
 Your repository must be configured to use GitHub Actions as the source of your pages.
 
 ![Repository settings example](./static/settings.png)
 
-Additionally you must ensure that GitHub Actions workflows can push to the _gh-pages_ branch. The easiest way is to assign write permissions to all workflows.
-
-![Workflow permissions example](./static/workflow-permissions.png)
+## Local development
 
 Run `npm install` in the root directory and then `npm start` to launch a development version of VuePress.
-
-You can commit your docs as often as you like, your site won't be updated until you push changes to the `gh-pages` branch.
-When you are ready to publish changes, run `./publish.sh`. You should configure a GitHub Action to do this automatically when commits are pushed to the main branch.
-
-[🔙 GitHub](https://github.com/sliekens/vuepress-my-way)
