@@ -1,10 +1,12 @@
 # How it works
 
-Documentation source files are stored in the main branch under `/docs`. Change code and documentation together in atomic commits.
+Change code and documentation together in atomic commits.
 
-Your repository must be configured to use the _gh-pages_ branch and the root directory (/).
+Documentation source files are stored in the main branch under `/docs`.
 
-![Repository settings example](./static/repository-settings.png)
+Your repository must be configured to use GitHub Actions as the source of your pages.
+
+![Repository settings example](./static/settings.png)
 
 Additionally you must ensure that GitHub Actions workflows can push to the _gh-pages_ branch. The easiest way is to assign write permissions to all workflows.
 
