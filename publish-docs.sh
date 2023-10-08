@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 npm ci
 npm run build
 git stash push --all -- docs/.vuepress/dist
